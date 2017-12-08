@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @thing.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @thing.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @thing.category_id %>
+</p>
+
+<p>
+  <strong>Storage:</strong>
+  <%= @thing.storage_id %>
+</p>
+
+<p>
+  <strong>Storage detailed info:</strong>
+  <%= @thing.storage_detailed_info %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @thing.owner_id %>
+</p>
+
+<p>
+  <strong>Last inspect date:</strong>
+  <%= @thing.last_inspect_date %>
+</p>
+
+<p>
+  <strong>Expire date:</strong>
+  <%= @thing.expire_date %>
+</p>
+
+<%= link_to 'Edit', edit_thing_path(@thing) %> |
+<%= link_to 'Back', things_path %>

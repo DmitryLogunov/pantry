@@ -1,0 +1,16 @@
+.menu {
+  padding-left: 0px;
+}
+
+.menu > li {
+  list-style-type: none;
+  display: inline;
+  border-right: 1px solid #000;
+  padding-right: 10px;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.menu > li.last {
+    border-right: none;
+}

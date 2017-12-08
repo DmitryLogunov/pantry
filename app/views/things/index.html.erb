@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Things</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Storage</th>
+      <th>Storage detailed info</th>
+      <th>Owner</th>
+      <th>Last inspect date</th>
+      <th>Expire date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @things.each do |thing| %>
+      <tr>
+        <td><%= thing.title %></td>
+        <td><%= thing.description %></td>
+        <td><%= thing.category_id %></td>
+        <td><%= thing.storage_id %></td>
+        <td><%= thing.storage_detailed_info %></td>
+        <td><%= thing.owner_id %></td>
+        <td><%= thing.last_inspect_date %></td>
+        <td><%= thing.expire_date %></td>
+        <td><%= link_to 'Show', thing %></td>
+        <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+        <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thing', new_thing_path %>

@@ -1,0 +1,57 @@
+<%= form_with(model: thing, local: true) do |form| %>
+  <% if thing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thing.errors.count, "error") %> prohibited this thing from being saved:</h2>
+
+      <ul>
+      <% thing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :thing_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :thing_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.number_field :category_id, id: :thing_category_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :storage_id %>
+    <%= form.number_field :storage_id, id: :thing_storage_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :storage_detailed_info %>
+    <%= form.text_field :storage_detailed_info, id: :thing_storage_detailed_info %>
+  </div>
+
+  <div class="field">
+    <%= form.label :owner_id %>
+    <%= form.number_field :owner_id, id: :thing_owner_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_inspect_date %>
+    <%= form.date_select :last_inspect_date, id: :thing_last_inspect_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expire_date %>
+    <%= form.date_select :expire_date, id: :thing_expire_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
