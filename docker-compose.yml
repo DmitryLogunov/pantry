@@ -5,6 +5,17 @@ services:
     ports:
       - '5432:5432'
     environment:
-      POSTGRES_USER: pguser
-      POSTGRES_PASSWORD: 111      
-      POSTGRES_DB: pgdb
+      - STAGE
+    env_file:
+      - ./.env.$STAGE.local
+  app:
+    environment:
+      - STAGE
+    env_file:
+      - ./.env.$STAGE.local
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - '3000:3000'
+ #   entrypoint: rake db:migrate && bundle exec puma -C config/puma.rb
