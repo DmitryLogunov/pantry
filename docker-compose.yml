@@ -16,6 +16,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    volumes:
+    - ./:/app
     ports:
       - '3000:3000'
- #   entrypoint: rake db:migrate && bundle exec puma -C config/puma.rb
+    entrypoint: sh ./bin/docker/start-app.sh
