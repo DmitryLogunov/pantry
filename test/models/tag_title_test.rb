@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ListTagTest < ActiveSupport::TestCase
+class TagTitleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

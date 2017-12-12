@@ -22,12 +22,6 @@ ActiveRecord::Schema.define(version: 20171208131851) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "list_tags", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "owners", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -44,6 +38,12 @@ ActiveRecord::Schema.define(version: 20171208131851) do
   create_table "storages", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tag_titles", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
