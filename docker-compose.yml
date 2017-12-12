@@ -1,13 +1,15 @@
 version: '2.1'
 services:
   postgres:
-    image: postgres:latest
+    image: centos/postgresql-95-centos7
     ports:
       - '5432:5432'
     environment:
       - STAGE
     env_file:
       - ./.env.$STAGE.local
+    volumes:
+    - ./:/app
   app:
     environment:
       - STAGE
@@ -18,6 +20,8 @@ services:
       dockerfile: ./Dockerfile
     volumes:
     - ./:/app
+    depends_on:
+      - postgres
     ports:
       - '3000:3000'
-    entrypoint: sh ./bin/docker/start-app.sh
+    entrypoint: ["./bin/docker/wait-for-postgres.sh", "./bin/docker/start-app.sh"]
