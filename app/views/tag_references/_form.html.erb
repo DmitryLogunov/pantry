@@ -1,0 +1,27 @@
+<%= form_with(model: tag_reference, local: true) do |form| %>
+  <% if tag_reference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tag_reference.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+      <% tag_reference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tag_id %>
+    <%= form.number_field :tag_id, id: :tag_tag_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thing_id %>
+    <%= form.number_field :thing_id, id: :tag_thing_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

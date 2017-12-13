@@ -42,15 +42,15 @@ ActiveRecord::Schema.define(version: 20171208131851) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tag_titles", force: :cascade do |t|
-    t.string "title"
+  create_table "tag_references", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "thing_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
-    t.integer "tag_id"
-    t.integer "thing_id"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

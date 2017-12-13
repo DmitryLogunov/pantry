@@ -1,2 +1,2 @@
-json.extract! tag, :id, :tag_id, :thing_id, :created_at, :updated_at
+json.extract! tag, :id, :title, :created_at, :updated_at
 json.url tag_url(tag, format: :json)
